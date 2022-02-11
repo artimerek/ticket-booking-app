@@ -18,7 +18,6 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String username;
     private String email;
     private String password;
 
@@ -30,15 +29,13 @@ public class User {
     @OneToMany(mappedBy = "user", cascade=CascadeType.ALL)
     private Set<Ticket> tickets = new HashSet<>();
 
-    public User(String username, String email, String password, Collection<Role> roles) {
-        this.username = username;
+    public User(String email, String password, Collection<Role> roles) {
         this.email = email;
         this.password = password;
         this.roles = roles;
     }
 
-    public User(String username, String email, String password) {
-        this.username = username;
+    public User(String email, String password) {
         this.email = email;
         this.password = password;
     }

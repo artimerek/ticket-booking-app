@@ -3,7 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-  <title>Available tickets</title>
+  <title>All events</title>
 
   <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -23,7 +23,6 @@
       </button>
       <a class="navbar-brand" href="#" th:href="@{/}">Home page</a>
       <a sec:authorize="hasRole('ADMIN')" class="navbar-brand" href="#" th:href="@{/events/generateEvent}">Generate event</a>
-      <a class="navbar-brand" href="#" th:href="@{/events}">Check all events</a>
       <a class="navbar-brand" href="#" th:href="@{/mytickets}">Check your tickets</a>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
@@ -37,26 +36,26 @@
 <br>
 <br>
 <div class="container">
-  <h2>Available tickets</h2>
+  <h2>Events:</h2>
   <table class="table table-striped">
     <thead>
     <tr>
       <th>Id</th>
-      <th>Event name </th>
+      <th>Name </th>
       <th>Date </th>
-      <th>Seat number </th>
-      <th>Price  </th>
+      <th>Place name </th>
+      <th>All tickets </th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="ticket: ${tickets}">
-      <td th:text="${ticket.id}" />
-      <td th:text="${ticket.getEvent().name}" />
-      <td th:text="${ticket.getEvent().date}" />
-      <td th:text="${ticket.getSeatNumber()}" />
-      <td th:text="${ticket.getPrice()}" />
+    <tr th:each="event: ${events}">
+      <td th:text="${event.id}" />
+      <td th:text="${event.name}" />
+      <td th:text="${event.date}" />
+      <td th:text="${event.placeName}" />
+      <td th:text="${event.getTickets().size()}" />
       <td>
-        <a th:href="@{/tickets/ticket/{id}(id=${ticket.id})}"> Book </a>
+        <a th:href="@{/events/event/{id}(id=${event.id})}"> Check tickets</a>
       </td>
       <td>
       </td>

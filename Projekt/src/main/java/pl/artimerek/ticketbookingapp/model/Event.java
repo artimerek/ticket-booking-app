@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Getter
@@ -27,6 +28,11 @@ public class Event {
         this.name = name;
         this.placeName = placeName;
         this.date = date;
+    }
+
+    public Set<Ticket> freeTickets(){
+        return tickets.stream().filter(ticket -> ticket.getUser() == null)
+                .collect(Collectors.toSet());
     }
 
 }

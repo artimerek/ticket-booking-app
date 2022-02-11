@@ -27,11 +27,10 @@ public class TicketController {
     public String getTicket(@PathVariable Long id){
         Ticket ticket = ticketService.getById(id);
         String name = ticketService.getUser();
-        System.out.println(name);
         ticket.setUser(userService.getUserByEmail(name));
         ticketService.save(ticket);
 
-        return "home";
+        return "successBooked";
     }
 
 

@@ -20,7 +20,7 @@ public class AdminCreator implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args)  {
-        User user = new User("konrad",
+        User user = new User(
                 "konrad@admin.com",
                 passwordEncoder.encode("test"),
                 Collections.singletonList(new Role("ROLE_ADMIN")));
