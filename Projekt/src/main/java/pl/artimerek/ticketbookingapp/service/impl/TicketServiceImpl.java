@@ -10,7 +10,6 @@ import pl.artimerek.ticketbookingapp.repository.TicketRepository;
 import pl.artimerek.ticketbookingapp.service.TicketService;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -71,7 +70,7 @@ public class TicketServiceImpl implements TicketService {
         return ticketSet;
     }
 
-    public List<Ticket> findAllFreeTickets(){
+    public List<Ticket> findAllFreeTickets() {
         return ticketRepository.findAll().stream()
                 .filter(ticket -> ticket.getUser() == null)
                 .filter(ticket -> ticket.getEvent().getDate().isAfter(LocalDate.now()))

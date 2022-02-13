@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pl.artimerek.ticketbookingapp.model.Event;
 import pl.artimerek.ticketbookingapp.model.Ticket;
 import pl.artimerek.ticketbookingapp.service.TicketService;
 import pl.artimerek.ticketbookingapp.service.UserService;
@@ -32,6 +31,5 @@ public class TicketController {
 
         return "successBooked";
     }
-
 
 }

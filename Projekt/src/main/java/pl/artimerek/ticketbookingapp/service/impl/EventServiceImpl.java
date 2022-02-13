@@ -6,14 +6,13 @@ import pl.artimerek.ticketbookingapp.model.Event;
 import pl.artimerek.ticketbookingapp.repository.EventRepository;
 import pl.artimerek.ticketbookingapp.service.EventService;
 
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
 import java.time.LocalDate;
-import java.time.Month;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Service
 @RequiredArgsConstructor
@@ -64,10 +63,10 @@ public class EventServiceImpl implements EventService {
         int size = random.ints(4, 13)
                 .findFirst()
                 .getAsInt();
-        StringBuilder sb = new StringBuilder(size);
-        for(int i = 0; i < size; i++)
-            sb.append(AB.charAt(rnd.nextInt(AB.length())));
-        return sb.toString();
+        return IntStream.range(0, size)
+                .mapToObj(i -> String.valueOf(AB.charAt(rnd.nextInt(AB.length()))))
+                .collect(Collectors.joining());
+
     }
 
     private LocalDate getRandomDate(){

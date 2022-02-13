@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.artimerek.ticketbookingapp.model.User;
-import pl.artimerek.ticketbookingapp.service.EventService;
 import pl.artimerek.ticketbookingapp.service.TicketService;
 import pl.artimerek.ticketbookingapp.service.UserService;
 
@@ -19,7 +18,6 @@ public class HomeController {
 
     private final UserService userService;
     private final TicketService ticketService;
-    private final EventService eventService;
     private String currentLogged;
 
     @GetMapping("/login")
