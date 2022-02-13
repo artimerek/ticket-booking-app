@@ -4,9 +4,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @NoArgsConstructor
 @Getter
 @Setter
-public class Helper {
-    private int ticketAmount;
+public class EventHelper {
+    private String name;
+    private String placeName;
+    private String date;
+    private int ticketsAmount;
 }

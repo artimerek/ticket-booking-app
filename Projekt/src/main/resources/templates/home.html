@@ -20,9 +20,11 @@
                     class="icon-bar"></span> <span class="icon-bar"></span> <span
                     class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#" th:href="@{/}">Home page</a>
-            <a sec:authorize="hasRole('ADMIN')" class="navbar-brand" href="#" th:href="@{/bootstrap}">Generate event</a>
-            <a class="navbar-brand" href="#" th:href="@{/tickets}">Check all tickets</a>
+            <a sec:authorize="hasRole('ADMIN')" class="navbar-brand" href="#" th:href="@{/events/generateEvent}">Generate event</a>
+            <a sec:authorize="hasRole('ADMIN')" class="navbar-brand" href="#" th:href="@{/events/create-form}">Create event</a>
+            <a sec:authorize="hasRole('ADMIN')" class="navbar-brand" href="#" th:href="@{/h2-console}">Check database</a>
+            <a class="navbar-brand" href="#" th:href="@{/events}">Check all events</a>
+            <a class="navbar-brand" href="#" th:href="@{/tickets}">Check available tickets</a>
             <a class="navbar-brand" href="#" th:href="@{/mytickets}">Check your tickets</a>
         </div>
 

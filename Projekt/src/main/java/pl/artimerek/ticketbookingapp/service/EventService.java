@@ -14,5 +14,7 @@ public interface EventService {
 
     Event findById(Long eventId);
 
+    Event getRandomEvent();
+
     void deleteById(Long eventId);
 }

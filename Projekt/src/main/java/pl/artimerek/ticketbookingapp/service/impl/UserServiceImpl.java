@@ -9,7 +9,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.artimerek.ticketbookingapp.model.Role;
 import pl.artimerek.ticketbookingapp.model.User;
-import pl.artimerek.ticketbookingapp.repository.TicketRepository;
 import pl.artimerek.ticketbookingapp.repository.UserRepository;
 import pl.artimerek.ticketbookingapp.service.UserService;
 
@@ -22,7 +21,6 @@ import java.util.stream.Collectors;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
-    private final TicketRepository ticketRepository;
     private final BCryptPasswordEncoder passwordEncoder;
 
     public User getUserByEmail(String email){
