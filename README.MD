@@ -1,7 +1,7 @@
 Instrukcja:
 
 Logowanie jako admin:
-http://localhost:8070/ lub klinięcie w odpowiednie hiperłącze.
+http://localhost:8070/
 
 Username: konrad@admin.com
 Password : test
