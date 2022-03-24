@@ -1,23 +1,11 @@
-Instrukcja:
+Instruction:
 
-Logowanie jako admin:
-http://localhost:8070/
+Login as admin: http: // localhost: 8070 /
 
-Username: konrad@admin.com
-Password : test
+Username: konrad@admin.com Password: test
 
-Rola administratora umożliwia generowanie losowych eventów 
-oraz tworzenie ich przez formularz.
-Admin może też tworzyć eventy.
+The administrator role allows you to generate random events and create them via the form. Admin can also create events.
 
-By się zarejestrować trzeba udać się pod adres:
-http://localhost:8070/register lub klinięcie w odpowiednie hiperłącze.
-Otrzymamy wtedy rolę zwykłego użytkownika który może tylko
-przeglądać swoje bilety oraz je bookować.
+To register, go to the following address: http: // localhost: 8070 / register or click the appropriate hyperlink. We will then be given the role of an ordinary user who can only view his tickets and book them.
 
-By zalogować się do bazy danych
-http://localhost:8070/h2-console lub bedac zalogowanym jako admin 
-zakładka database/ 
-JDBC URL:	jdbc:h2:mem:mydb
-User Name: 	sa
-Password: (nie trzeba nic wpisywać)
+To log in to the database http: // localhost: 8070 / h2-console or being logged in as admin tab database / JDBC URL: jdbc: h2: mem: mydb User Name: sa Password: (no need to enter anything)
